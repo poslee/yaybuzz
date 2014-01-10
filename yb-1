@@ -1,0 +1,54 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to YayBuzz!</title>
+	<link href="main.css" type="text/css" rel="stylesheet">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<script src="main.js"></script>
+</head>
+
+<body>-->
+<?php include_once("template_pageHeader.php"); ?>
+	
+<div id="context">
+ <div id="pageContext">
+ 
+ <!-- Form container -->
+ <div id="sign-up-form">
+ <form name="signupform" action=""> <!--You PHP validation file-->
+	<label for="username">Username</label>
+	<input type="text" id="username" onblur="checkusername()" onkeyup="restrict('username')" maxlength="16">
+	<label for="email">Email Address</label>
+	<input type="text" id="email"  onfocus="emptyElement('status')" onkeyup="restrict('email')" maxlength="88">
+	<label for="pass1">Create Password</label>
+	<select id="gender" onfocus="emptyElement('status')">
+      <option value=""></option>
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+	<label for="country">Country</label>
+	<select id="country" onfocus="emptyElement('status')">	
+		<?php include_once("template_country_list.php");?>
+	</select>
+	<label for="pass1">Create Password</label>
+	<input id="pass1" type="password" onfocus="emptyElement('status')" maxlength="16">
+	<label for="pass2">Re-enter Password</label>
+	<input id="pass2" type="password" onfocus="emptyElement('status')" maxlength="16">
+	<div id="terms">
+      <a href="#" onclick="return false" onmousedown="openTerms()">
+        View the Terms Of Use
+      </a>
+    </div>
+	<div id="btn-container">
+		<input type="submit" name="sign_up_btn" id="sign_up_btn" value="Register">	
+	</div>	
+ </form>
+ </div> <!-- End form container -->
+ </div>
+<?php include_once("template_pageFooter.php"); ?>
+
+</body>
+</html>
+
+
